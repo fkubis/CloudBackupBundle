@@ -1,4 +1,9 @@
 services:
+    dizda.command:
+        class: Dizda\CloudBackupBundle\Command\BackupCommand
+        calls:
+            - [setContainer, ["@service_container"] ]
+
     dizda.cloudbackup.manager.database:
         class: Dizda\CloudBackupBundle\Manager\DatabaseManager
         arguments:
